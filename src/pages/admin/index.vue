@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <div>Histórico de logins</div>
+  <q-page>
+    Histórico de logins
+  </q-page>
 </template>
 
 <route lang="yaml">

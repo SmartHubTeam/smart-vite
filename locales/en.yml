@@ -1,14 +1,30 @@
 button:
-  about: About
-  back: Back
-  go: GO
-  home: Home
-  toggle_dark: Toggle dark mode
-  toggle_langs: Change languages
-intro:
-  desc: Opinionated Vite Starter Template
-  dynamic-route: Demo of dynamic route
-  hi: Hi, {name}!
-  aka: Also known as
-  whats-your-name: What's your name?
+    toggle_langs: Change languages
+    about: About
+    go: GO
+    back: Back
+    login: Login
+    home: Home
+    toggle_dark: Toggle dark mode
 not-found: Not found
+intro:
+    dynamic-route: Demo of dynamic route
+    hi: Hi, {name}!
+    aka: Also known as
+    whats-your-name: What's your name?
+    desc: Opinionated Vite Starter Template
+menu:
+    help: Help
+    settings: Settings
+    your-profile: Your profile
+    sign-out: Sign out
+    groups: Groups
+    dashboard: Dashboard
+    users: Users
+title:
+    profile: Data Profile
+    user:
+        create: User - Create
+        update: User
+        list: Users
+    group: Groups

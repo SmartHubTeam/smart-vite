@@ -1,14 +1,30 @@
 button:
-  about: Sobre
-  back: Voltar
-  go: Ir
-  home: Início
-  toggle_dark: Alternar modo escuro
-  toggle_langs: Mudar de idioma
-intro:
-  desc: Modelo Opinativo de Partida de Vite
-  dynamic-route: Demonstração de rota dinâmica
-  hi: Olá, {name}!
-  aka: Também conhecido como
-  whats-your-name: Qual é o seu nome?
+    toggle_langs: Mudar de idioma
+    about: Sobre
+    go: Ir
+    back: Voltar
+    login: Login
+    home: Início
+    toggle_dark: Alternar modo escuro
 not-found: Não encontrado
+intro:
+    dynamic-route: Demonstração de rota dinâmica
+    hi: Olá, {name}!
+    aka: Também conhecido como
+    whats-your-name: Qual é o seu nome?
+    desc: Modelo Opinativo de Partida de Vite
+menu:
+    help: Ajuda
+    settings: Configurações
+    your-profile: Seu perfil
+    sign-out: Sair
+    groups: Grupos
+    dashboard: Dashboard
+    users: Usuários
+title:
+    profile: Dados do perfil
+    user:
+        create: Usuários - Cadastrar
+        update: Usuário
+        list: Usuários
+    group: Grupos
