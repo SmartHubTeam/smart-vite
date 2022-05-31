@@ -7,10 +7,12 @@ const { t } = useI18n()
     <q-header class="bg-primary text-white">
       <q-toolbar>
         <q-toolbar-title :shrink="true">
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          SmartVite
+          <router-link :to="{ name: 'admin' }">
+            <q-avatar>
+              <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+            </q-avatar>
+            SmartVite
+          </router-link>
         </q-toolbar-title>
 
         <nav v-if="$q.screen.gt.sm" class="q-ml-xs q-gutter-md text-body2 text-weight-bold row items-center no-wrap">
@@ -30,6 +32,10 @@ const { t } = useI18n()
         <q-space />
 
         <div class="q-pl-sm q-gutter-sm row items-center no-wrap">
+          <q-btn dense flat no-wrap :title="t('button.toggle_dark')" @click="toggleDark()">
+            <div i="carbon-sun dark:carbon-moon" />
+          </q-btn>
+
           <q-btn dense flat no-wrap>
             <span class="text-capitalize text-body2 text-weight-bold">Leidison Siqueira</span>
             <q-icon name="arrow_drop_down" size="16px" />
