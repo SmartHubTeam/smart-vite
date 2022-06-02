@@ -1,74 +1,27 @@
 <script setup lang="ts">
+import type { MenuItem } from '~/core/interfaces/layout'
+import { MenuService } from '~/core/services/menu-service'
+
 const { t } = useI18n()
+const menus: MenuItem[] = reactive(MenuService.list(t))
 </script>
 
 <template>
   <q-layout view="hHh lpR fff">
     <q-header class="bg-primary text-white">
-      <q-toolbar>
-        <q-toolbar-title :shrink="true">
-          <router-link :to="{ name: 'admin' }">
-            <q-avatar>
-              <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-            </q-avatar>
-            SmartVite
-          </router-link>
-        </q-toolbar-title>
-
-        <nav v-if="$q.screen.gt.sm" class="q-ml-xs q-gutter-md text-body2 text-weight-bold row items-center no-wrap">
-          <router-link :to="{ name: 'admin' }" class="text-white">
-            {{ t('menu.dashboard') }}
-          </router-link>
-
-          <router-link :to="{ name: 'admin-groups' }" class="text-white">
-            {{ t('menu.groups') }}
-          </router-link>
-
-          <router-link :to="{ name: 'admin-users' }" class="text-white">
-            {{ t('menu.users') }}
-          </router-link>
-        </nav>
-
-        <q-space />
-
-        <div class="q-pl-sm q-gutter-sm row items-center no-wrap">
-          <q-btn dense flat no-wrap :title="t('button.toggle_dark')" @click="toggleDark()">
-            <div i="carbon-sun dark:carbon-moon" />
-          </q-btn>
-
-          <q-btn dense flat no-wrap>
-            <span class="text-capitalize text-body2 text-weight-bold">Leidison Siqueira</span>
-            <q-icon name="arrow_drop_down" size="16px" />
-
-            <q-menu auto-close>
-              <q-list dense>
-                <q-item :to="{ name: 'admin-profile' }" clickable class="GL__menu-link">
-                  <q-item-section>{{ t('menu.your-profile') }}</q-item-section>
-                </q-item>
-                <q-separator />
-                <q-item :to="{ name: 'admin-help' }" clickable class="GL__menu-link">
-                  <q-item-section>{{ t('menu.help') }}</q-item-section>
-                </q-item>
-                <q-item :to="{ name: 'admin-settings' }" clickable class="GL__menu-link">
-                  <q-item-section>{{ t('menu.settings') }}</q-item-section>
-                </q-item>
-                <q-item :to="{ name: 'index' }" clickable class="GL__menu-link">
-                  <q-item-section>{{ t('menu.sign-out') }}</q-item-section>
-                </q-item>
-              </q-list>
-            </q-menu>
-          </q-btn>
-        </div>
-      </q-toolbar>
+      <Toolbar :menus="$q.screen.gt.sm && menus.filter(item => item.enabled())" />
     </q-header>
 
     <q-page-container>
-      <router-view />
+      <q-page padding>
+        <router-view />
+      </q-page>
     </q-page-container>
 
     <q-footer bg-white>
       <q-toolbar>
         <q-space />
+
         <a href="https://smarthub.com.br">
           <q-img
             src="https://drive.google.com/u/0/uc?id=1Rj5l5vOPdXNuNpQjj-SV7IFF_9vCdps7&export=download"

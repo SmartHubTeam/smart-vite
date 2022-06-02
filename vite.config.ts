@@ -50,6 +50,7 @@ export default defineConfig({
         'vue',
         'vue-router',
         'vue-i18n',
+        'vee-validate',
         'vue/macros',
         '@vueuse/head',
         '@vueuse/core',
